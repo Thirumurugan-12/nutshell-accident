@@ -5,13 +5,15 @@ import streamlit as st
 import joblib
 from IPython import get_ipython
 from PIL import Image
+import cv2
+import os
 
 
 # load the encoder and model object
 model = joblib.load("rta_model_deploy3.joblib")
 encoder = joblib.load("ordinal_encoder2.joblib")
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # 1: serious injury, 2: Slight injury, 0: Fatal Injury
 
@@ -36,7 +38,12 @@ features = ["Accident_Classification","Accident_Spot","Accident_Location"]
 # Give a title to web app using html syntax
 st.title("Accident Severity Prediction App 🚧")
 st.sidebar.title("Accident Detection")
+
+
 # define a main() function to take inputs from user in form based approch
+
+
+
 def main():
     with st.form("road_traffic_severity_form"):
         st.subheader("Please enter the following inputs:")
@@ -64,9 +71,17 @@ def main():
         
         st.write(ans[prediction[0]])
             
+        df = pd.read_csv("Copy of Copy of AccidentReports.csv")
+        df = df[['Latitude','Longitude','Severity']].iloc[:60000]
+        df = df[df['Severity']==ans[prediction[0]]]
+        df = df[df['Latitude']!=""]
+        df = df[df['Longitude']!=""]
+        df = df.rename(columns={'Latitude':'LATITUDE','Longitude':'LONGITUDE'})
+        print(df.columns)
+        st.map(data=df,longitude=df['LATITUDE'],latitude=df['LONGITUDE'])
 
+if __name__ == "__main__":
+    main()
 
-if __name__ == '__main__':
-   main()
 
 
