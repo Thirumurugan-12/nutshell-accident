@@ -7,6 +7,7 @@ from IPython import get_ipython
 from PIL import Image
 import cv2
 import os
+import altair as alt
 
 
 # load the encoder and model object
@@ -35,14 +36,13 @@ op_Accident_Location = ['Rural Areas', 'Villages settlement', 'City/Town',
 
 features = ["Accident_Classification","Accident_Spot","Accident_Location"]
 
+
 # Give a title to web app using html syntax
 st.title("Accident Severity Prediction App 🚧")
 st.sidebar.title("Accident Detection")
 
 
 # define a main() function to take inputs from user in form based approch
-
-
 
 def main():
     with st.form("road_traffic_severity_form"):
@@ -69,17 +69,27 @@ def main():
         prediction = model.predict(pred_arr)
         print(prediction) 
         
-        st.write(ans[prediction[0]])
-            
+        st.metric(label="Prediction",value=ans[prediction[0]],delta="Severity")
+
+
         df = pd.read_csv("Copy of Copy of AccidentReports.csv")
-        df = df[['Latitude','Longitude','Severity']].iloc[:60000]
+        df = df[['Latitude','Longitude','Severity','Road_Condition','Weather','Main_Cause']].iloc[:60000]
         df = df[df['Severity']==ans[prediction[0]]]
         df = df[df['Latitude']!=""]
         df = df[df['Longitude']!=""]
+        df = df[df['Road_Condition']!=""]
+
+
+        scale = alt.Scale(domain=["Fine", "Wet", "Snow", "Frost/Ice", "Flood", "Unknown"], range=["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"])
         df = df.rename(columns={'Latitude':'LATITUDE','Longitude':'LONGITUDE'})
         print(df.columns)
-        st.map(data=df,longitude=df['LATITUDE'],latitude=df['LONGITUDE'])
 
+        with st.spinner("Loading Map..."):
+            st.map(data=df,longitude=df['LATITUDE'],latitude=df['LONGITUDE'])
+        #st.map(data=df,longitude=df['LATITUDE'],latitude=df['LONGITUDE'])
+
+            st.subheader("Weather Analysis")
+            st.bar_chart(df['Weather'].value_counts(),use_container_width=True)
 if __name__ == "__main__":
     main()
 

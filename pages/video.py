@@ -8,6 +8,7 @@ import cv2
 import os
 from ultralytics import YOLO
 
+r = 0
 
 def display_tracker_options():
     display_tracker = st.radio("Display Tracker", ('Yes', 'No'))
@@ -31,7 +32,7 @@ def _display_detected_frames(conf, model, st_frame, image, is_display_tracking=N
     Returns:
     None
     """
-
+    global r
     # Resize the image to a standard size
     image = cv2.resize(image, (720, int(720*(9/16))))
 
@@ -42,13 +43,15 @@ def _display_detected_frames(conf, model, st_frame, image, is_display_tracking=N
         # Predict the objects in the image using the YOLOv8 model
         res = model.predict(image, conf=conf)
 
+    r = r + len(res[0])
     # # Plot the detected objects on the video frame
     res_plotted = res[0].plot()
     st_frame.image(res_plotted,
                    caption='Detected Video',
                    channels="BGR",
                    use_column_width=True
-                   )
+                   )  
+    
 
 def play_stored_video(video, conf, model):
     """
@@ -72,6 +75,7 @@ def play_stored_video(video, conf, model):
         video_bytes = video_file.read()
     if video_bytes:
         st.video(video_bytes)
+    
     print(video)
     try:
         vid_cap = cv2.VideoCapture(str(video))
@@ -110,7 +114,8 @@ def main():
         if detect:        
             play_stored_video(path,0.5,model)
 
-
+        if r > 0:
+            st.subheader(":red[Accident Detected]")
 
 if __name__=="__main__":
     main()
