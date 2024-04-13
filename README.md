@@ -1,4 +1,4 @@
-# NullShell
+# NutShell
 <img align="right" width="200" src="https://github.com/Thirumurugan-12/nutshell-accident/assets/127939893/28036c6e-61db-4481-9a9f-4220e4539a9e" style="border-radius: 50%">
 
 A novel system for predicting traffic accidents using 3D vehicle tracking. The system uses 3D models to accurately track vehicles and a Convolutional Neural Network (CNN) to learn unique activity patterns based on vehicle trajectories and velocities. 
