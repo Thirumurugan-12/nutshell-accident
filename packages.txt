@@ -1,13 +1,6 @@
-# System dependencies for Python packages
-
-# NumPy dependencies
 libblas-dev
 liblapack-dev
-
-# OpenCV-Python dependencies
 python3-opencv
-
-# Pillow dependencies
 libjpeg-dev
 zlib1g-dev
 libtiff-dev
