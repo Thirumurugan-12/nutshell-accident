@@ -105,7 +105,7 @@ def main():
         with open(("files\{source_vid.name}"),"wb") as f:
             f.write(source_vid.getbuffer())
 
-        path = f"files\{source_vid.name}"
+        path = f"{source_vid.name}"
 
         detect = st.sidebar.button("Submit")
         #is_display_tracker, tracker = display_tracker_options()
