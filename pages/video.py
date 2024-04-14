@@ -102,7 +102,7 @@ def main():
     source_vid = st.sidebar.file_uploader("Upload video here",type="mp4")
     if source_vid:
         #print(source_vid.name)
-        with open(os.path.join("files",source_vid.name),"wb") as f:
+        with open(("files\{source_vid.name}"),"wb") as f:
             f.write(source_vid.getbuffer())
 
         path = f"files\{source_vid.name}"
