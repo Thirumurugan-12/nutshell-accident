@@ -1,1 +1,12 @@
-joblib-dev
+libblas-dev
+liblapack-dev
+python3-opencv
+libjpeg-dev
+zlib1g-dev
+libtiff-dev
+libfreetype6-dev
+liblcms2-dev
+libwebp-dev
+tcl8.6-dev
+tk8.6-dev
+python-tk

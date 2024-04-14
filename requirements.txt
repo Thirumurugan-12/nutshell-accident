@@ -8,3 +8,4 @@ Pillow==10.3.0
 streamlit==1.32.2
 ultralytics==8.1.37
 yolo
+scikit-learn
