@@ -33,7 +33,7 @@ jobs:
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* .streamlit -r
+        run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3
@@ -65,9 +65,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F0BB436FD252446BA15BA62E54FB4044 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_579413D7350F4FBA9AF6ED6844C0E720 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8764C358A8D14AD48E2FB8A5066C4CA4 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_47BD1C2AB9A84678AF96451B5E17EE43 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8136627A2FE54B62A12362DF2FE983FF }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CDDAF38CD419467587A5BB341C9D97CE }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
