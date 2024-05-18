@@ -7,6 +7,7 @@ from PIL import Image
 import cv2
 import os
 from ultralytics import YOLO
+import tempfile
 
 r = 0
 
@@ -107,12 +108,15 @@ def main():
 
         path = f"{source_vid.name}"
 
+        tfile = tempfile.NamedTemporaryFile(delete=False)
+        tfile.write(source_vid.read())
+
         detect = st.sidebar.button("Submit")
         #is_display_tracker, tracker = display_tracker_options()
         #print(path)
         model = YOLO("best.pt")
         if detect:        
-            play_stored_video(path,0.5,model)
+            play_stored_video(tfile.name,0.5,model)
 
         if r > 0:
             st.subheader(":red[Accident Detected]")
