@@ -7,5 +7,6 @@ pandas==2.2.2
 Pillow==10.3.0
 streamlit==1.32.2
 ultralytics==8.1.37
+lapx>=0.5.2
 yolo
 scikit-learn
