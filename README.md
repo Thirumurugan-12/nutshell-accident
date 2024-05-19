@@ -38,30 +38,24 @@ A probability model is then developed to predict the likelihood of traffic accid
 - Install VSCode: [VSCODE](https://code.visualstudio.com/)
 - Install Python: [Python](https://www.python.org/downloads/)
 
-1. **Clone the project:**
+## **Clone the project:**
 
     ```bash
       git clone https://github.com/Thirumurugan-12/nutshell-accident.git
     ```
 
-2. **Go to the project directory and Open Project:**
+## **Go to the project directory and Open Project:**
 
     ```bash
       cd nutshell-accident
       code .
 
     ```
-
-3.  **Install Python Dependencies:**
-
-    ```bash
-        pip install "Python-Dependency-Name"
-    ```
-
+    
 ## Resolving Python Dependencies
 
    ```bash
-         pip install pandas numpy streamlit joblib IPython opencv-python 
+         pip install -r requirements.txt
    ```
 
 ## Run you Application
