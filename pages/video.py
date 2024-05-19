@@ -100,6 +100,7 @@ def play_stored_video(video, conf, model):
         
             
 def main():
+    st.sidebar.title("Accident Detection (Upload Video to Detect the Accident)")
     source_vid = st.sidebar.file_uploader("Upload video here",type="mp4")
     if source_vid:
         #print(source_vid.name)
