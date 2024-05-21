@@ -1,15 +1,14 @@
-# NutShell
-<img align="right" width="200" src="https://github.com/Thirumurugan-12/nutshell-accident/assets/127939893/28036c6e-61db-4481-9a9f-4220e4539a9e" style="border-radius: 50%">
-
+# <a href= "https://nutshell.azurewebsites.net/">NutShell</a> 
+### Live Website Hosted on Microsoft Azure Cloud Platform ->  [Click Here](https://nutshell.azurewebsites.net/)
+<a href="https://nutshell.azurewebsites.net/">
+    <img align="right" width="200" src="https://github.com/Thirumurugan-12/nutshell-accident/assets/127939893/28036c6e-61db-4481-9a9f-4220e4539a9e" style="border-radius: 50%">
+</a>
 A novel system for predicting traffic accidents using 3D vehicle tracking. The system uses 3D models to accurately track vehicles and a Convolutional Neural Network (CNN) to learn unique activity patterns based on vehicle trajectories and velocities. 
-
 <br>
-
 A probability model is then developed to predict the likelihood of traffic accidents. This data-driven approach can improve safety by identifying high-risk areas and driver behaviour, optimizing traffic flow, and contributing to a safer and more efficient transportation system.
 
 
 ## Tech Stack
-
 <div style="display:flex; justify-content:space-around;">
     <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></a>
     <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /></a>
@@ -17,7 +16,10 @@ A probability model is then developed to predict the likelihood of traffic accid
     <a href="https://www.tensorflow.org/"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow" /></a>
     <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit" /></a>
     <a href="https://opencv.org/"><img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" /></a>
+    <a href="https://azure.microsoft.com/"><img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Microsoft Azure" /></a>
+    <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /></a>
 </div>
+
 
 ## Architecture Design
 
@@ -40,17 +42,17 @@ A probability model is then developed to predict the likelihood of traffic accid
 
 ## **Clone the project:**
 
-    ```bash
+ ```bash
       git clone https://github.com/Thirumurugan-12/nutshell-accident.git
-    ```
+ ```
 
 ## **Go to the project directory and Open Project:**
 
-    ```bash
+```bash
       cd nutshell-accident
       code .
 
-    ```
+```
     
 ## Resolving Python Dependencies
 
