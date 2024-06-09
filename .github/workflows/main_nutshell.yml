@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - NutShell
+name: Build and deploy Python app to Azure Web App - Nutshell
 
 on:
   push:
@@ -65,14 +65,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C615E0E67C3141B5901097FCEC769009 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_38B8B711AFA24EC8A7317438BB57C696 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9ACB869336944004AA7799155E4BDB7B }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_817D75E3DAE64FAC86A293FB5DEE6486 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_25F1EC77516943EAA1D88C6399C44202 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AE4CAE7E9EEB46B2B78E5739EA88EDB9 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'NutShell'
+          app-name: 'Nutshell'
           slot-name: 'Production'
           
